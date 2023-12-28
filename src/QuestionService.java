@@ -19,7 +19,7 @@ public class QuestionService {
        int i=0;
        for(Question q : questions)
        {
-           System.out.println("Question no.: "+q.getId());
+           System.out.println("Question no: "+q.getId());
            System.out.println(q.getQuestion());
            System.out.println(q.getOpt1());
            System.out.println(q.getOpt2());
@@ -31,9 +31,17 @@ public class QuestionService {
            i++;
        }
 
-       for (String s : selection) 
-       {
-            System.out.println(s);
+    //    for (String s : selection) 
+    //    {
+    //         System.out.println(s);
+    //    }
+
+       int score = 0;
+       for(int s=0;s<selection.length;s++){
+            if(selection[s].equals(questions[s].getAnswer())){
+                score++;
+            }
        }
+       System.out.println("Your score : "+score);
     }
 }
